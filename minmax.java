@@ -1,4 +1,4 @@
-class Main {
+class minmax {
   public static void main(String[] args) {
     int A [] = { -4, -3, 3, 4, 1, 6 };
     int min = A[0];
