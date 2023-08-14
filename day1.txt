@@ -1,0 +1,153 @@
+problem 1
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class DuplicateWords {
+
+    public static void main(String[] args) {
+
+        String regex = "\\b(\\w+)(?:\\W+\\1\\b)+";
+        Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+
+        Scanner in = new Scanner(System.in);
+        int numSentences = Integer.parseInt(in.nextLine());
+        
+        while (numSentences-- > 0) {
+            String input = in.nextLine();
+            
+            Matcher m = p.matcher(input);
+            
+            // Check for subsequences of input that match the compiled pattern
+            while (m.find()) {
+                input = input.replaceAll( m.group(),m.group(1));
+            }
+            
+            // Prints the modified sentence.
+            System.out.println(input);
+        }
+        
+        in.close();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+problem_2
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution{
+	public static void main(String[] args){
+		
+		Scanner in = new Scanner(System.in);
+		int testCases = Integer.parseInt(in.nextLine());
+		while(testCases>0){
+			String line = in.nextLine();
+			
+          	//Write your code here
+              Pattern pattern = Pattern.compile("<([^<>/]+)>([^<>]+)</(\\1)>");
+              Matcher matcher = pattern.matcher(line);
+                if(matcher.find()) {
+                 System.out.println(matcher.group(2));
+                 while(matcher.find()) {
+                 System.out.println(matcher.group(2));
+                    }
+                 
+} 
+                 else {
+                System.out.println("None");
+                  }
+              
+			
+			testCases--;
+		}
+        in.close();
+	}
+}
+
+
+
+
+problem_3
+
+
+import java.math.BigDecimal;
+import java.util.*;
+class Solution{
+    public static void main(String []args){
+        //Input
+        Scanner sc= new Scanner(System.in);
+        int n=sc.nextInt();
+        String []s=new String[n+2];
+        for(int i=0;i<n;i++){
+            s[i]=sc.next();
+        }
+        sc.close();
+        
+        Arrays.sort(s, (a,b) -> {
+if(a != null && b != null)
+return new BigDecimal(b).compareTo(new BigDecimal(a));
+return 0;
+});
+
+        //Output
+        for(int i=0;i<n;i++)
+        {
+            System.out.println(s[i]);
+        }
+    }
+}
+
+
+
+problem 4
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+
+
+public class Solution {
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+
+        // String n = bufferedReader.readLine();
+        String n = scanner.nextLine();
+        
+        BigInteger b =new BigInteger(n);
+        System.out.println(b.isProbablePrime(10)?"prime":"not prime");
+        
+        
+
+        scanner.close();
+    }
+}
+
+
+problem 5
+
+
+
